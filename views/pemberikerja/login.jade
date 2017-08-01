@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Web Conten Manager
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.2
+    link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(href='/bootstrap/css/custom.css', rel='stylesheet', type='text/css')
+    // Font Awesome Icons
+    link(href='/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='/bootstrap/js/bootstrap.js" rel="stylesheet')
+
+    script(type='text/javascript', src='/bootstrap/jquery-3.2.1.min.js')
+    script(type='text/javascript', src='/bootstrap/js/jquery-1.11.1.min.js')
+    script (type='text/javascript' src='/bootstrap/js/bootstrap-3.1.1.min.js')
+    script (type='text/javascript' src='/bootstrap/js/jquery.isotope.min.js')
+    script (type='text/javascript' src='/bootstrap/js/jquery.singlePageNav.min.js')
+    script (type='text/javascript' src='/bootstrap/js/main.js')
+  //  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script.
+       $(document).ready(function(){
+       $("button").click(function(){
+       $("p").hide();
+       });
+       })
+
+  body
+
+    .container
+      .row
+        .col-lg-4
+        .col-lg-4
+          .panel
+          .panel-primary
+            .panel-heading Login Admin Web Conten Manager
+            .panel-body
+
+            form(action='/pemberikerja/login', method='POST', role='form')
+              - if (messages.info)
+                .alert.alert-danger.alert-dismissable
+                  button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+                  | #{messages.info}
+              .form-group.has-feedback
+                input.form-control(type='text', placeholder='Username', name='namauser', value='')
+                span.glyphicon.glyphicon-user.form-control-feedback
+              .form-group.has-feedback
+                input.form-control(type='password', placeholder='Password', name='password', value='')
+                span.glyphicon.glyphicon-lock.form-control-feedback
+              .row
+                .col-xs-12
+                  input.btn.btn-primary.btn-block.btn-flat(type='submit', value='Log In')

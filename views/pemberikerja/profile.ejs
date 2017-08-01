@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Conten Manager</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.2-->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/bootstrap/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome Icons-->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/bootstrap/js/bootstrap.js&quot; rel=&quot;stylesheet">
+    <script type="text/javascript" src="/bootstrap/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.1.min.js"></script>
+    <script>(type='text/javascript' src='/bootstrap/js/bootstrap-3.1.1.min.js')</script>
+    <script>(type='text/javascript' src='/bootstrap/js/jquery.isotope.min.js')</script>
+    <script>(type='text/javascript' src='/bootstrap/js/jquery.singlePageNav.min.js')</script>
+    <script>(type='text/javascript' src='/bootstrap/js/main.js')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      $("button").click(function(){
+      $("p").hide();
+      });
+      })
+    </script>
+  </head>
+  <body>
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="text-center">
+        <h1 class=" fa fa-user"> Profile</h1><br>
+        <span><strong>user id adalah </strong>: <%= user._id ? user._id : '' %></span><br>
+       
+        <span class="fa fa-sign-out"><a href="/pemberikerja/logout". method="GET"> Sign out</a></span>
+        <hr>
+        <div class="jumbotron">
+        <% if (user.pengguna.username != null) { %>
+          <img src="https://avatars.io/gravatar/<%= user.pengguna.username %>" class="img-circle"><br>
+          <strong>username</strong>: <%= user.pengguna.username %><br>
+        <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
